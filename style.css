@@ -16,7 +16,7 @@ main {
     position: absolute;
     width: 90%;
     height: 95vh;
-    margin-top: 5%;
+    margin-top: 1%;
     padding: 0 5% 0 5%;
     overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.4);
@@ -45,7 +45,7 @@ em {
 
 #thalento {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /*Scrollbar*/
@@ -70,5 +70,9 @@ em {
         width: 50%;
         float: none;
         margin: auto;
+    }
+
+    #thalento {
+        flex-wrap: wrap;
     }
 }
