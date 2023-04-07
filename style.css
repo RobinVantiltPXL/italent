@@ -15,7 +15,8 @@ button {
 main {
     position: absolute;
     width: 90%;
-    height: 100vh;
+    height: 95vh;
+    margin-top: 5%;
     padding: 0 5% 0 5%;
     overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.4);
@@ -23,12 +24,28 @@ main {
 
 span {
     font-weight: bold;
+    line-height: 30px;
 }
 
 .voorstelling > img {
     width: 10%;
     float: right;
     margin-left: 20px;
+}
+
+em {
+    position: absolute;
+    bottom: 0;
+    color: rgb(112, 110, 110);
+}
+
+.datespan {
+    float: right;
+}
+
+#thalento {
+    display: flex;
+    justify-content: space-between;
 }
 
 /*Scrollbar*/
