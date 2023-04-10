@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 
-let camera, scene, renderer, stats, material;
+let camera, scene, renderer, material, followMouse, mouseStopTimeOut;
 let mouseX = 0, mouseY = 0;
+let staticX, staticY;
 
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
@@ -67,6 +68,7 @@ function init() {
     document.body.style.touchAction = 'none';
     document.body.addEventListener( 'pointermove', onPointerMove );
 
+    staticMove();
     //
 
     window.addEventListener( 'resize', onWindowResize );
@@ -86,12 +88,20 @@ function onWindowResize() {
 }
 
 function onPointerMove( event ) {
-
+    followMouse = true;
     if ( event.isPrimary === false ) return;
 
     mouseX = event.clientX - windowHalfX;
     mouseY = event.clientY - windowHalfY;
 
+    clearTimeout(mouseStopTimeOut)
+    mouseStopTimeOut = setTimeout(() => staticMove(), 3000)
+}
+
+function staticMove() {
+    followMouse = false;
+    staticX = Math.random() < 0.5 ? 1 : -1;
+    staticY = Math.random() < 0.5 ? 1 : -1;
 }
 
 function animate() {
@@ -101,9 +111,13 @@ function animate() {
 }
 
 function render() {
-    camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-    camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
-
+    if (followMouse) {
+        camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+        camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+    } else {
+        camera.position.x += 0.05 * staticX;
+        camera.position.y += 0.05 * staticY;
+    }
     camera.lookAt( scene.position );
 
     renderer.render( scene, camera );
