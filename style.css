@@ -4,19 +4,10 @@ body {
     font-family: "Raleway", "Odoo Unicode Support Noto", sans-serif;
 }
 
-button {
-    background: none;
-    border: none;
-    color: white;
-    position: absolute;
-    cursor: pointer;
-}
-
 main {
     position: absolute;
     width: 100vw;
-    height: 95vh;
-    margin-top: 1%;
+    height: 100vh;
     padding: 0 5% 0 5%;
     overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.4);
@@ -34,12 +25,6 @@ span {
     border-radius: 20px;
 }
 
-em {
-    position: absolute;
-    bottom: 0;
-    color: rgb(112, 110, 110);
-}
-
 #thalento {
   margin-top: 120px;
     display: flex;
@@ -52,6 +37,38 @@ em {
 
 .overzicht {
   margin-top: 30px;
+}
+
+#toolArrow {
+  position: absolute;
+  bottom: 0;
+  right: 35px;
+  width: 25px;
+  border-bottom: none;
+}
+
+#tools {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#tools.hidden {
+  display: none;
+}
+
+button{
+  background: none;
+  color: #00ff2a;
+  border: 2px solid rgb(36, 35, 35);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.true {
+  border-color: #00ff2a;
 }
 
 /*Scrollbar*/

@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 
+window.bg = 1;
+
 let camera, scene, renderer, material, followMouse, mouseStopTimeOut;
 let mouseX = 0, mouseY = 0;
 let staticX, staticY;
@@ -105,7 +107,7 @@ function staticMove() {
 }
 
 function animate() {
-
+    if (window.bg != 1) return; // stop animate when bg not in use
     requestAnimationFrame( animate );
     render();
 }
@@ -121,6 +123,5 @@ function render() {
     camera.lookAt( scene.position );
 
     renderer.render( scene, camera );
-
 }
 
