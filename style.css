@@ -324,3 +324,33 @@ i {
     border-radius: 500px 0 0 500px;
   }
 }
+
+
+/*Selectie*/
+
+.labelWrapper {
+  margin-top: 50px;
+}
+
+label {
+  margin: 20px;
+  border: 2px solid grey;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(36, 35, 35);
+  cursor: pointer;
+}
+
+label.selected {
+  border-color: #00ff2a;
+  color: #00ff2a;
+  cursor: default;
+}
+
+.report {
+  margin-top: 50px;
+}
+
+.report.hidden {
+  display: none;
+}

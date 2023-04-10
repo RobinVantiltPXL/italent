@@ -14,6 +14,7 @@
         }
     </script>
     <script defer src="./bg.js" type="module"></script>
+    <script defer src="./script.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
     <title>I-Talent Robin Vantilt</title>
@@ -134,7 +135,7 @@
                     <div class="date">6 oct</div>
                     <i class="icon fa fa-route"></i>
                     <div class="content">
-                      <h2>ACA Group Infrastructure as code</h2>
+                      <h2>ACA Group Infrastructure as Code</h2>
                       <p>
                         Theorie: voor- en nadelen van IaC, alternatieven, DevOps, GItOps, Terraform, AWS. Praktijk: Use case om zelf IaC te schrijven in Terraform.
                       </p>
@@ -221,17 +222,32 @@
                         </p>
                     </div>
                 </div>
-              </div>
+            </div>
         </div>
         <br>
+
+        <div class="selectie">
+            <h2>Activiteit Verslagen</h2>
+            <div class="labelWrapper">
+            <label class="selected">
+                <input type="radio" hidden name="selection" value="DDD & IaC" checked>
+                DDD & IaC
+            </label>
+            <label>
+                <input type="radio" hidden name="selection" value="AI ding van cegeka">
+                AI ding van cegeka
+            </label>
+            <label>
+                <input type="radio" hidden name="selection" value="POP-sessie “Brein aan het werk”">
+                POP-sessie “Brein aan het werk”
+            </label>
+            </div>
+        </div>
+
+        <div class="report" name="DDD & IaC">DDD report...</div>
+        <div class="report hidden" name="AI ding van cegeka">AI report...</div>
+        <div class="report hidden" name="POP-sessie “Brein aan het werk”">POP report...</div>
     </main>
     <em>Dubbelklik om actergrond te bekijken.</em>
-    <script>
-        const main = document.getElementById("main");
-        const body = document.getElementsByTagName("body")[0];
-        body.addEventListener("dblclick", () => {
-            main.style.visibility = main.style.visibility == "hidden" ? "" : "hidden";
-        });
-    </script>
 </body>
 </html>
