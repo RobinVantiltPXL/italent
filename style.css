@@ -28,7 +28,7 @@ span {
 }
 
 .voorstelling > img {
-    width: 10%;
+    width: 12%;
     float: right;
     margin-left: 20px;
     border-radius: 20px;
@@ -40,17 +40,18 @@ em {
     color: rgb(112, 110, 110);
 }
 
-.datespan {
-    float: right;
-}
-
 #thalento {
+  margin-top: 120px;
     display: flex;
     justify-content: space-evenly;
 }
 
 #thalento > img {
     border-radius: 30px;
+}
+
+.overzicht {
+  margin-top: 30px;
 }
 
 /*Scrollbar*/
@@ -82,12 +83,37 @@ em {
     }
 }
 
+/* Legend */
+.legend {
+  width: 50%;
+  margin: 10px auto 50px auto;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: rgb(36, 35, 35);
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.legendItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.legendItem > p {
+  margin: 0 0 0 10px;
+}
+
 /*Timeline*/
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+i {
+  color: #00ff2a;
 }
 
 .timeline {
@@ -207,7 +233,6 @@ em {
   border-radius: 40px;
   text-align: center;
   font-size: 18px;
-  color: #ffffff;
   z-index: 1;
 }
 
@@ -250,6 +275,10 @@ em {
     left: 90px;
   }
 
+  .timeline > .year {
+    margin-left: 45px;
+  }
+
   .container {
     width: 100%;
     padding-left: 120px;
@@ -275,6 +304,12 @@ em {
   .container.right .date {
     right: auto;
     left: 15px;
+  }
+
+  .container.left .datespan,
+  .container.right .datespan {
+    right: auto;
+    left: 0px;
   }
 
   .container.left .icon,
