@@ -438,6 +438,27 @@ i {
 .report {
   margin-top: 50px;
 }
+.report > .imageContainer {
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+.report > .imageContainer > img {
+  width: 35%;
+  margin-right: 10%;
+}
+
+.report > .imageContainer > img.small {
+  width: 20%;
+}
+
+.report > .imageContainer > img.smaller {
+  width: 25%;
+}
+
+.report > .imageContainer > img.large {
+  width: 70%;
+}
 
 .report.hidden {
   display: none;
