@@ -18,7 +18,7 @@ span {
     line-height: 30px;
 }
 
-.voorstelling > img {
+#voorstelling > img {
     width: 12%;
     float: right;
     margin-left: 20px;
@@ -35,21 +35,18 @@ span {
     border-radius: 30px;
 }
 
-.overzicht {
-  margin-top: 30px;
-}
-
 #toolArrow {
   position: absolute;
-  bottom: 0;
-  right: 35px;
+  bottom: 10px;
+  right: 40px;
   width: 25px;
-  border-bottom: none;
+  height: 25px;
+  border-radius: 50%;
 }
 
 #tools {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   right: 20px;
   display: flex;
   flex-direction: column-reverse;
@@ -65,10 +62,54 @@ button{
   border: 2px solid rgb(36, 35, 35);
   cursor: pointer;
   margin-top: 10px;
+  border-radius: 10px;
 }
 
 button.true {
   border-color: #00ff2a;
+}
+
+/* nav */
+
+.displayNone {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: left;
+}
+
+.nav > button {
+  margin-left: 50px;
+  color: white;
+  border: 2px solid white;
+  transform: skew(-20deg);
+  padding: 10px 20px;
+}
+
+.nav > button:hover {
+  border: 2px solid #00ff2a;
+}
+
+.nav > button > div {
+  transform: skew(20deg);
+  font-size: large;
+}
+
+@media (max-width: 767.98px) {
+  .nav {
+    display: block;
+    text-align: center;
+  }
+
+  .nav > button {
+    margin: 0 0 10px 0;
+  }
+
+  .nav > button > div {
+    font-size: medium;
+  }
 }
 
 /*Scrollbar*/
@@ -89,7 +130,7 @@ button.true {
 /*Mobile*/
 
 @media only screen and (max-width: 600px) {
-    .voorstelling > img {
+    #voorstelling > img {
         width: 50%;
         float: none;
         margin: auto;
@@ -383,23 +424,15 @@ i {
 
 /*Selectie*/
 
-.labelWrapper {
-  margin-top: 50px;
-}
-
-label {
+#activityReportSelect {
   margin: 20px;
-  border: 2px solid grey;
+  border-color: #00ff2a;
+  color: #00ff2a;
   padding: 20px;
   border-radius: 20px;
   background-color: rgb(36, 35, 35);
-  cursor: pointer;
-}
-
-label.selected {
-  border-color: #00ff2a;
-  color: #00ff2a;
-  cursor: default;
+  outline: none;
+  font-size: large;
 }
 
 .report {

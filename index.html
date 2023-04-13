@@ -20,10 +20,16 @@
 </head>
 <body>
     <main id="main">
-        <h1>I-Talent Robin Vantilt</h1>
+        <div class="nav">
+            <h1>I-Talent Robin Vantilt</h1>
+            <button id="voorstellingButton"><div>Voorstelling</div></button>
+            <button id="overzichtButton"><div>Activiteiten</div></button>
+            <button id="selectieButton"><div>Activiteit Verslagen</div></button>
+            <button id="reflectieButton"><div>Eindreflectie</div></button>
+        </div>
         <hr><br>
 
-        <div class="voorstelling">
+        <div id="voorstelling">
             <img src="./images/face.png" alt="picture">
             <h2>Voorstelling</h2>
             <p>
@@ -42,9 +48,9 @@
                 <img src="./images/thalento3.png" alt="introvert">
                 <img src="./images/thalento4.png" alt="meewerkend">
             </div>
-        </div><br><br>
+        </div>
         
-        <div class="overzicht">
+        <div id="overzicht" class="displayNone">
             <h2>Activiteiten</h2>
             <div class="legend">
                 <div class="legendItem">
@@ -221,29 +227,18 @@
                 </div>
             </div>
         </div>
-        <br>
 
-        <div class="selectie">
+        <div id="selectie" class="displayNone">
             <h2>Activiteit Verslagen</h2>
-            <div class="labelWrapper">
-            <label class="selected">
-                <input type="radio" hidden name="selection" value="DDD & IaC" checked>
-                DDD & IaC
-            </label>
-            <label>
-                <input type="radio" hidden name="selection" value="AI ding van cegeka">
-                AI ding van cegeka
-            </label>
-            <label>
-                <input type="radio" hidden name="selection" value="POP-sessie “Brein aan het werk”">
-                POP-sessie “Brein aan het werk”
-            </label>
-            </div>
+            <select name="activityReportSelect" id="activityReportSelect">
+                <option value="Innovatieroute DDD & IaC">Innovatieroute DDD & IaC</option>
+                <option value="Cegeka: Business Analysis & Project Management in Applied AI">Cegeka: Business Analysis & Project Management in Applied AI</option>
+                <option value="POP-sessie “Brein aan het werk”">POP-sessie “Brein aan het werk”</option>
+            </select>
+            <div class="report" name="Innovatieroute DDD & IaC">DDD report...</div>
+            <div class="report hidden" name="Cegeka: Business Analysis & Project Management in Applied AI">AI report...</div>
+            <div class="report hidden" name="POP-sessie “Brein aan het werk”">POP report...</div>
         </div>
-
-        <div class="report" name="DDD & IaC">DDD report...</div>
-        <div class="report hidden" name="AI ding van cegeka">AI report...</div>
-        <div class="report hidden" name="POP-sessie “Brein aan het werk”">POP report...</div>
     </main>
     <div id="tools" class="hidden">
         <button id="bgButton" class="true">Portfolio</button>
