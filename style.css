@@ -96,7 +96,12 @@ button.true {
     }
 
     #thalento {
-        flex-wrap: wrap;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    #thalento > img {
+      margin-top: 20px;
     }
 }
 
@@ -119,6 +124,24 @@ button.true {
 
 .legendItem > p {
   margin: 0 0 0 10px;
+}
+
+@media (max-width: 767.98px) {
+  .legend {
+    width: 100%;
+    flex-direction: column;
+    padding: 18px 40px 10px 40px;
+  }
+
+  .legendItem {
+    margin-bottom: 10px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .legendItem > i {
+    width: 14px;
+  }
 }
 
 /*Timeline*/
@@ -274,17 +297,28 @@ i {
 }
 
 .container .content h2 {
-  margin: 0 0 10px 0;
+  margin: 0;
   font-size: 18px;
   font-weight: normal;
   color: #00ff2a;
+  text-align: center;
 }
 
 .container .content p {
+  text-align: center;
   margin: 0;
   font-size: 16px;
   line-height: 22px;
   color: white;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+}
+
+.container .content:hover p {
+  
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
 }
 
 @media (max-width: 767.98px) {
@@ -299,7 +333,11 @@ i {
   .container {
     width: 100%;
     padding-left: 120px;
-    padding-right: 30px;
+    padding-right: 0;
+  }
+
+  .container .content:hover p {
+    max-height: 0;
   }
 
   .container.right {
