@@ -1,3 +1,23 @@
+// spa naviagtion
+const voorstelling = document.getElementById("voorstelling");
+const overzicht = document.getElementById("overzicht");
+const selectie = document.getElementById("selectie");
+document.getElementById("voorstellingButton").addEventListener('click', () => {
+    voorstelling.classList.remove("displayNone");
+    overzicht.classList.add("displayNone");
+    selectie.classList.add("displayNone");
+});
+document.getElementById("overzichtButton").addEventListener('click', () => {
+    overzicht.classList.remove("displayNone");
+    voorstelling.classList.add("displayNone");
+    selectie.classList.add("displayNone");
+});
+document.getElementById("selectieButton").addEventListener('click', () => {
+    selectie.classList.remove("displayNone");
+    voorstelling.classList.add("displayNone");
+    overzicht.classList.add("displayNone");
+});
+
 /* toggle portfolio */
 const main = document.getElementById("main");
 const body = document.getElementsByTagName("body")[0];
@@ -18,12 +38,20 @@ toolArrow.addEventListener("click", () => {
 
 // switch background
 const spaceBg = "bg.js", pxlBg = "bg2.js"
-let bgScript;
-
-setBg(spaceBg);
-
 const spaceButton = document.getElementById("spaceButton");
 const pxlButton = document.getElementById("pxlButton");
+let bgScript;
+
+const params = new URL(window.location.href).searchParams;
+const bgParam = params.get("bg");
+if (bgParam === "pxl") {
+    setBg(pxlBg);
+    spaceButton.classList.remove('true');
+    pxlButton.classList.add('true');
+} else {
+    setBg(spaceBg);
+}
+
 spaceButton.addEventListener('click', () => {
     setNewBg(spaceBg);
     spaceButton.classList.add('true');
@@ -49,24 +77,13 @@ function setBg(bg) {
     document.head.appendChild(bgScript)
 }
 
-/* Radio button event */
+/* Select activity*/
 
-const radioButtons = document.querySelectorAll("input[name='selection']");
-radioButtons.forEach(el => el.addEventListener('change', () => selectionChanged()));
-
-
-// Selection changed
 const reports = document.getElementsByClassName('report');
-function selectionChanged() {
-    let report;
-    radioButtons.forEach(el => {
-        report = reports[el.value];
-        if (el.checked) {
-            el.parentNode.classList.add('selected')
-            report.classList.remove('hidden')
-        } else {
-            el.parentNode.classList.remove('selected');
-            report.classList.add('hidden')
-        }
-    });
-}
+const activityReportSelect = document.getElementById("activityReportSelect");
+activityReportSelect.addEventListener("change", (event) => {
+    for (const report of reports) {
+        report.classList.add("hidden");
+    }
+    reports[event.target.value].classList.remove("hidden")
+})
