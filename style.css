@@ -10,7 +10,22 @@ main {
     height: 100vh;
     padding: 0 5% 0 5%;
     overflow-y: scroll;
-    background-color: rgba(0, 0, 0, 0.4);
+}
+
+main.bgOpac0 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+main.bgOpac1 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+main.bgOpac2 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+main.bgOpac3 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+main.bgOpac4 {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 span {
@@ -48,12 +63,50 @@ span {
   position: absolute;
   bottom: 50px;
   right: 20px;
+  width: 75px;
   display: flex;
   flex-direction: column-reverse;
 }
 
 #tools.hidden {
   display: none;
+}
+
+#brightnessSlider {
+  appearance: none;
+  background: #070707;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 20px;
+
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+
+  margin-bottom: 30px;
+}
+
+#brightnessSlider:hover {
+  opacity: 1;
+}
+
+#brightnessSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00ff2a;
+  cursor: pointer;
+}
+
+#brightnessSlider::-moz-range-thumb {
+  background: #00ff2a;
+  cursor: pointer;
 }
 
 button{

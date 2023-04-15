@@ -107,6 +107,14 @@ function setBg(bg) {
     document.head.appendChild(bgScript)
 }
 
+// change brightness (bg opacity)
+const slider = document.getElementById("brightnessSlider");
+slider.oninput = () => {
+    main.classList = "";
+    main.classList.add("bgOpac" + slider.value);
+}
+
+
 /* Select activity*/
 
 const reports = document.getElementsByClassName('report');
