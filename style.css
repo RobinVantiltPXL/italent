@@ -438,28 +438,29 @@ i {
 .report {
   margin-top: 50px;
 }
-.report > .imageContainer {
+
+.report.hidden {
+  display: none;
+}
+
+.imageContainer {
   text-align: center;
   margin: 20px 0 20px 0;
 }
 
-.report > .imageContainer > img {
+.imageContainer > img {
   width: 35%;
-  margin-right: 10%;
+  margin: 0 5%;
 }
 
-.report > .imageContainer > img.small {
+.imageContainer > img.small {
   width: 20%;
 }
 
-.report > .imageContainer > img.smaller {
+.imageContainer > img.smaller {
   width: 25%;
 }
 
-.report > .imageContainer > img.large {
+.imageContainer > img.large {
   width: 70%;
-}
-
-.report.hidden {
-  display: none;
 }
