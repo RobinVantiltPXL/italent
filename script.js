@@ -1,22 +1,47 @@
-// spa naviagtion
+"use strict"
+
+const params = new URLSearchParams(window.location.search);
+
+// spa navigation + url based
 const voorstelling = document.getElementById("voorstelling");
 const overzicht = document.getElementById("overzicht");
 const selectie = document.getElementById("selectie");
-document.getElementById("voorstellingButton").addEventListener('click', () => {
-    voorstelling.classList.remove("displayNone");
-    overzicht.classList.add("displayNone");
-    selectie.classList.add("displayNone");
-});
-document.getElementById("overzichtButton").addEventListener('click', () => {
-    overzicht.classList.remove("displayNone");
-    voorstelling.classList.add("displayNone");
-    selectie.classList.add("displayNone");
-});
-document.getElementById("selectieButton").addEventListener('click', () => {
-    selectie.classList.remove("displayNone");
+const reflectie = document.getElementById("reflectie");
+
+navigateTo(params.get("section"));
+
+document.getElementById("voorstellingButton").addEventListener('click', () => navigateTo(null));
+document.getElementById("overzichtButton").addEventListener('click', () => navigateTo("overzicht"));
+document.getElementById("selectieButton").addEventListener('click', () => navigateTo("selectie"));
+document.getElementById("reflectieButton").addEventListener('click', () => navigateTo("reflectie"));
+
+function navigateTo(section) {
     voorstelling.classList.add("displayNone");
     overzicht.classList.add("displayNone");
-});
+    selectie.classList.add("displayNone");
+    reflectie.classList.add("displayNone");
+
+    switch (section) {
+        case "overzicht":
+            params.set("section", "overzicht");
+            overzicht.classList.remove("displayNone");
+            break;
+        case "selectie":
+            params.set("section", "selectie");
+            selectie.classList.remove("displayNone");
+            break;
+        case "reflectie":
+            params.set("section", "reflectie");
+            reflectie.classList.remove("displayNone");
+            break;
+        default:
+            params.delete("section");
+            voorstelling.classList.remove("displayNone");
+            break;
+    }
+    updateUrl();
+}
+
 
 /* toggle portfolio */
 const main = document.getElementById("main");
@@ -42,7 +67,6 @@ const spaceButton = document.getElementById("spaceButton");
 const pxlButton = document.getElementById("pxlButton");
 let bgScript;
 
-const params = new URL(window.location.href).searchParams;
 const bgParam = params.get("bg");
 if (bgParam === "pxl") {
     setBg(pxlBg);
@@ -56,11 +80,17 @@ spaceButton.addEventListener('click', () => {
     setNewBg(spaceBg);
     spaceButton.classList.add('true');
     pxlButton.classList.remove('true');
+
+    params.remove("bg");
+    updateUrl();
 });
 pxlButton.addEventListener('click', () => {
     setNewBg(pxlBg);
     spaceButton.classList.remove('true');
     pxlButton.classList.add('true');
+
+    params.set("bg", "pxl");
+    updateUrl();
 });
 
 function setNewBg(bg) {
@@ -87,3 +117,10 @@ activityReportSelect.addEventListener("change", (event) => {
     }
     reports[event.target.value].classList.remove("hidden")
 })
+
+// UTIL
+
+function updateUrl() {
+    const newRelativePathQuery = window.location.pathname + '?' + params.toString();
+    history.pushState(null, '', newRelativePathQuery);
+}
