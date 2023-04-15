@@ -68,12 +68,12 @@ const pxlButton = document.getElementById("pxlButton");
 let bgScript;
 
 const bgParam = params.get("bg");
-if (bgParam === "pxl") {
-    setBg(pxlBg);
-    spaceButton.classList.remove('true');
-    pxlButton.classList.add('true');
-} else {
+if (bgParam === "space") {
     setBg(spaceBg);
+    pxlButton.classList.remove('true');
+    spaceButton.classList.add('true');
+} else {
+    setBg(pxlBg);
 }
 
 spaceButton.addEventListener('click', () => {
@@ -81,7 +81,7 @@ spaceButton.addEventListener('click', () => {
     spaceButton.classList.add('true');
     pxlButton.classList.remove('true');
 
-    params.delete("bg");
+    params.set("bg", "space");
     updateUrl();
 });
 pxlButton.addEventListener('click', () => {
@@ -89,7 +89,7 @@ pxlButton.addEventListener('click', () => {
     spaceButton.classList.remove('true');
     pxlButton.classList.add('true');
 
-    params.set("bg", "pxl");
+    params.delete("bg");
     updateUrl();
 });
 
