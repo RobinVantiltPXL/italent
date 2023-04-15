@@ -13,18 +13,21 @@ main {
 }
 
 main.bgOpac0 {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: 0;
 }
 main.bgOpac1 {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 main.bgOpac2 {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 main.bgOpac3 {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 main.bgOpac4 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+main.bgOpac5 {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -57,15 +60,20 @@ span {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  border-color: #00ff2a;
 }
 
 #tools {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(36, 35, 35);;
   position: absolute;
   bottom: 50px;
   right: 20px;
   width: 75px;
   display: flex;
   flex-direction: column-reverse;
+  height: 200px;
 }
 
 #tools.hidden {
@@ -74,12 +82,13 @@ span {
 
 #brightnessSlider {
   appearance: none;
-  background: #070707;
+  background: #3f3f3f;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
   border-radius: 20px;
+  width: 100px;
 
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
@@ -87,7 +96,7 @@ span {
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 #brightnessSlider:hover {
@@ -112,7 +121,7 @@ span {
 button{
   background: none;
   color: #00ff2a;
-  border: 2px solid rgb(36, 35, 35);
+  border: 2px solid #000000;
   cursor: pointer;
   margin-top: 10px;
   border-radius: 10px;
@@ -195,7 +204,8 @@ button.true {
     }
 
     #thalento > img {
-      margin-top: 20px;
+      width: 45%;
+      margin: 5px 5px
     }
 }
 
@@ -478,7 +488,6 @@ i {
 /*Selectie*/
 
 #activityReportSelect {
-  margin: 20px;
   border-color: #00ff2a;
   color: #00ff2a;
   padding: 20px;
@@ -486,6 +495,8 @@ i {
   background-color: rgb(36, 35, 35);
   outline: none;
   font-size: large;
+  max-width: 100%;
+  text-overflow: ellipsis
 }
 
 .report {
@@ -516,4 +527,23 @@ i {
 
 .imageContainer > img.large {
   width: 70%;
+}
+
+@media (max-width: 767.98px) {
+  .imageContainer > img {
+    width: 90%;
+    margin: 0 0 5% 0;
+  }
+
+  .imageContainer > img.small {
+    width: 60%;
+  }
+  
+  .imageContainer > img.smaller {
+    width: 90%;
+  }
+  
+  .imageContainer > img.large {
+    width: 90%;
+  }
 }
