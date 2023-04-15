@@ -81,7 +81,7 @@ spaceButton.addEventListener('click', () => {
     spaceButton.classList.add('true');
     pxlButton.classList.remove('true');
 
-    params.remove("bg");
+    params.delete("bg");
     updateUrl();
 });
 pxlButton.addEventListener('click', () => {
