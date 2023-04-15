@@ -499,6 +499,8 @@ i {
   text-overflow: ellipsis
 }
 
+a, a:hover, a:active, a:visited { color: white; }
+
 .report {
   margin-top: 50px;
 }
