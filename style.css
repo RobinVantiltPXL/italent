@@ -529,6 +529,16 @@ i {
   width: 70%;
 }
 
+.imageContainer.floatRight {
+  margin: 0 0 20px 0;
+  float: right;
+}
+
+.imageContainer.floatRight > img {
+  width: 80%;
+  margin: 0 5%;
+}
+
 @media (max-width: 767.98px) {
   .imageContainer > img {
     width: 90%;
